@@ -21,19 +21,17 @@ public class Main {
 			for (int i = 0; i < n; i++) {
 				int index = i;
 				while (index < n && s[index] == s[i]) {
-					index++;
-				}
-				count += (index - i) / 2;
-				for (int j = i; j < index; j++) {
-					if ((j - i) % 2 == 1) {
-						for (int k = 0; k < 3; k++) {
-							if (s[j] != colors[k]) {
-								s[j] = colors[k];
+					if ((index - i) % 2 == 1) {
+						for(int j = 0; j < 3; j++) {
+							if (s[index] != colors[j]) {
+								s[index] = colors[j];
 								break;
 							}
 						}
 					}
+					index++;
 				}
+				count += (index - i) / 2;
 				if (index - 1 >= 0 && index < n && s[index] == s[index-1]) {
 					for (int j = 0; j < 3; j++) {
 						if (s[index] != colors[j] && s[i] != colors[j]) {
