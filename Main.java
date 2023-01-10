@@ -22,7 +22,7 @@ public class Main {
 				int index = i;
 				while (index < n && s[index] == s[i]) {
 					if ((index - i) % 2 == 1) {
-						for(int j = 0; j < 3; j++) {
+						for (int j = 0; j < 3; j++) {
 							if (s[index] != colors[j]) {
 								s[index] = colors[j];
 								break;
